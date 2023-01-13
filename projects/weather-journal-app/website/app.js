@@ -36,7 +36,7 @@ const updateUI = async () => {
       // use latest added data
       let lastElement = allData[allData.length - 1];
       document.getElementById("date").innerHTML = lastElement.date;
-      document.getElementById("temp").innerHTML = lastElement.temp;
+      document.getElementById("temp").innerHTML = lastElement.temp + " degrees";
       document.getElementById("content").innerHTML = lastElement.userResponse;
     }
   } catch (error) {
