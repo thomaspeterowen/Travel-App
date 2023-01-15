@@ -1,11 +1,11 @@
 /* Global Variables */
 // url for api https://openweathermap.org/api
 // "Built-in API request by ZIP code"
-let baseURL = "https://api.openweathermap.org/data/2.5/weather?zip=";
+const baseURL = "https://api.openweathermap.org/data/2.5/weather?zip=";
 // key generated for user thomaspeterowen@gmail.com
 // TODO save key in a server side script instead of here?
 // units = metric (defined at end of string)
-let apiKey = "&appid=38621e60d3342339ccfb250e31b427a9&units=metric";
+const apiKey = "&appid=38621e60d3342339ccfb250e31b427a9&units=metric";
 
 //click event on 'Generate' button in UI
 document.getElementById("generate").addEventListener("click", performAction);
@@ -31,14 +31,15 @@ const updateUI = async () => {
   const request = await fetch("/all");
   try {
     const allData = await request.json();
+    // commented our script, as not necessary according to rubric.
     // only process if data is available
-    if (allData.length > 0) {
-      // use latest added data
-      let lastElement = allData[allData.length - 1];
-      document.getElementById("date").innerHTML = lastElement.date;
-      document.getElementById("temp").innerHTML = lastElement.temp + " degrees";
-      document.getElementById("content").innerHTML = lastElement.userResponse;
-    }
+    //if (allData.length > 0) {
+    // use latest added data
+    //let lastElement = allData[allData.length - 1];
+    document.getElementById("date").innerHTML = allData.date;
+    document.getElementById("temp").innerHTML = allData.temp + " degrees";
+    document.getElementById("content").innerHTML = allData.userResponse;
+    //}
   } catch (error) {
     console.log("error", error);
   }
@@ -78,6 +79,7 @@ const postData = async (url = "", data = {}) => {
   try {
     //convert response to json and return from function
     const newData = await response.json();
+    console.log(newData);
     return newData;
   } catch (error) {
     console.log("error", error);
@@ -85,4 +87,5 @@ const postData = async (url = "", data = {}) => {
 };
 
 // call to updateUI on page load, as there may already be data to display
-updateUI();
+// commented out as no need according to project rubric
+//updateUI();
