@@ -5,7 +5,7 @@ projectData = {};
 const dotenv = require("dotenv");
 const fetch = require("node-fetch");
 const path = require("path");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
 // require express, mock-api modules
 const express = require("express");
@@ -44,6 +44,26 @@ function addEntry(req, res) {
   //projectData.push(req.body);
   projectData = req.body;
 }
+
+// POST route to speak between MeaningCloud and this app
+app.post("/language", async (req, res) => {
+  let data = req.body;
+  // data holding url from user
+  console.log(data);
+
+  const requestOptions = {
+    method: "POST",
+  };
+  console.log(requestOptions);
+  const apiKey = process.env.API_KEY;
+  const userInput = data.url;
+
+  // call fetch on API url, then process response and send to client.
+  const result = await fetch(
+    `https://api.meaningcloud.com/sentiment-2.1?key=${apiKey}&url=${userInput}&lang=en`,
+    requestOptions
+  ).then((result) => result.json().then((data) => res.send(data)));
+});
 
 // Setup Server
 const port = 8000;
