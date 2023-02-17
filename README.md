@@ -5,29 +5,29 @@ This project is an asynchronous web app that uses Web API and user data to dynam
 
 ## FYI
 
-- Reviewer should use Node version ___ otherwise can run the following in bash ___
+- Reviewer should use Node version v14.18.0 otherwise they can run the following in bash "export NODE_OPTIONS=--openssl-legacy-provider"
 
 - Weatherbit unable to generate future forcast data, so excluded from the project.
 
 ## Scripts
 
-npm install
+npm install - install dependencies
 
-npm start
+npm start - start express server
 
-npm run build-dev
+npm run build-dev - start webpack dev server
 
-npm run build-prod
+npm run build-prod - webpack build, files in dist folder
 
-npm run test
+npm run test - run test scripts
 
 ## API Info
 
-- Geonames API
+- [Geonames API](http://www.geonames.org/export/web-services.html)
 
-- Weatherbit API
+- [Weatherbit API](https://www.weatherbit.io/)
 
-- Pixabay API
+- [Pixabay API](https://pixabay.com/pt/service/about/api/)
 
 ## Extras
 
