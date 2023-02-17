@@ -21,6 +21,14 @@ npm run build-prod
 
 npm run test
 
+## API Info
+
+- Geonames API
+
+- Weatherbit API
+
+- Pixabay API
+
 ## Extras
 
 - Additional functionality is the addition of an 'end date' and calculation/display of trip duration.
