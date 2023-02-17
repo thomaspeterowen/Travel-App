@@ -1,7 +1,9 @@
-import { checkURL } from "./js/urlChecker";
+import { spaceRemover } from "./js/spaceRemover";
 import { handleSubmit } from "./js/formHandler";
 import { getWeatherData } from "./js/getWeatherData";
+import { getCityData } from "./js/getCityData";
 import { countdown } from "./js/countdown";
+import { getImages } from "./js/getImages";
 
 import "./styles/style.scss";
 
@@ -24,4 +26,4 @@ function performAction(e) {
 
 // Pixabay API () -> photo returned (?)
 
-export { checkURL, handleSubmit, getWeatherData, countdown };
+export { spaceRemover, handleSubmit, getWeatherData, getCityData, countdown, getImages };

@@ -1,17 +1,17 @@
-const getWeatherData = async (lati, lngi) => {
-    const res = await fetch("/weatherbit", {
+const getImages = async (dest) => {
+    const res = await fetch("/pixabay", {
       method: "POST",
       credentials: "same-origin",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({"lat": lati, "lng": lngi})
+      body: JSON.stringify({"dest": dest})
     });
     try {
       // convert data to json format as required
       const data = await res.json();
       return data;
-
+      //console.log(data);
       /*if (data.status.code == 0) {
         // continue
         return data;
@@ -24,4 +24,4 @@ const getWeatherData = async (lati, lngi) => {
     }
   };
 
-  export { getWeatherData };
+  export { getImages };

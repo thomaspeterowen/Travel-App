@@ -1,37 +1,50 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Weather Journal</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap"
-      rel="stylesheet"
-    />
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel App</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <script type="text/javascript" src="../../../dist/main.js"></script>
-  </head>
-  <body>
-    <div id="app">
-      <h1 class="holder headline">Weather Journal App</h1>
-      <p>
-        When you add data below and hit 'Generate', your trip will be added to
-        the journal.
-      </p>
-      <div class="holder zip">
-        <label>Where and when are you going?</label>
-        <label for="fname">Destination</label>
-        <input type="text" id="dest" name="dest" placeholder="city" /><br />
-        <label for="lname">Date:</label>
-        <input type="date" id="date" name="date" value="date" /><br />
-        <button id="generate" type="submit">Generate</button>
-      </div>
-      <div class="holder entry">
+</head>
+
+<body>
+    <div class="form" id="app">
+        <span class="form__title">Travel App</span>
+        <form action="">
+            <span class="form__switch">
+				When you add data below and hit 'Generate', your trip will be added to the journal.
+			</span>		
+            <div class="form__input">
+                <i class="ri-map-pin-2-line"></i>
+                <input id="dest" type="text" placeholder="Destination">
+                <span class="bar"></span>
+            </div>
+            <div class="form__input">
+                <i class="ri-calendar-line"></i>
+                <input id="date" type="date" placeholder="Date">
+                <span class="bar"></span>
+            </div>
+            <button id="generate" type="submit" class="form__button">Generate Post</button>
+        </form>
+    </div>
+    <div class="posts">
+        <span class="form__title">Travel App</span>
         <div class="title">Most Recent Entry</div>
         <div id="entryHolder">
           <div id="countdown"></div>
-          <div id="temp"></div>
           <div id="content"></div>
+          <div id="lat"></div>
+          <div id="lng"></div>
+          <div id="countryName"></div>
+          <div>It looks like the temperature will be </div>
+          <div id="temp"></div>
+          <div> degrees!</div>
+          <img id="pic" src="" alt="">
         </div>
-      </div>
-    </div>
-  </body>
+    </div>	
+</body>
+
 </html>
