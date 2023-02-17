@@ -10,6 +10,7 @@ import "./styles/style.scss";
 
 //add event listeners here
 const submitButton = document.getElementById("generate");
+// event listener on click of button in UI to 'generate'
 submitButton.addEventListener("click", performAction);
 
 function performAction(e) {
@@ -17,6 +18,7 @@ function performAction(e) {
   const cont = countdown();
   const submit = handleSubmit(e);
   if (!cont || !submit){
+    // validation of input data
     window.alert("Please enter a valid destination and dates!");
   }
 }

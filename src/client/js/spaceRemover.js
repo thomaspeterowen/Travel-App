@@ -1,9 +1,7 @@
 function spaceRemover(inputText) {
-    // function to validate url, as required.
-    // input = string containing url
-    // output = true or false (valid or not valid)
-    console.log("::: Running spaceRemover :::", inputText);
-
+    // function to remove spaces from input text and replace with '+'
+    // input = string to format
+    // output = formatted string
     var replaced = inputText.replace(/ /g, '+');
     return replaced;
 }

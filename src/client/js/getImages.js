@@ -1,4 +1,5 @@
-const getImages = async (dest) => {
+const getImages = async (dest) => {     
+    // preparation to call pixabay API
     const res = await fetch("/pixabay", {
       method: "POST",
       credentials: "same-origin",

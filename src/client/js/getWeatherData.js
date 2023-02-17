@@ -1,4 +1,5 @@
 const getWeatherData = async (lati, lngi) => {
+    // preparation to call weatherbit API
     const res = await fetch("/weatherbit", {
       method: "POST",
       credentials: "same-origin",

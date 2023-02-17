@@ -1,4 +1,5 @@
 const getCityData = async (location) => {
+    // preparation to call geonames API
     const res = await fetch("/geonames", {
       method: "POST",
       credentials: "same-origin",
