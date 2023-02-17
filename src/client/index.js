@@ -1,4 +1,5 @@
 import { spaceRemover } from "./js/spaceRemover";
+import { inputEmpty } from "./js/inputEmpty";
 import { handleSubmit } from "./js/formHandler";
 import { getWeatherData } from "./js/getWeatherData";
 import { getCityData } from "./js/getCityData";
@@ -13,17 +14,11 @@ submitButton.addEventListener("click", performAction);
 
 function performAction(e) {
   console.log("BUTTON CLICKED !!");
-  // Countdown (date) -> date-today() live countdown
-  countdown();
-  handleSubmit(e);
+  const cont = countdown();
+  const submit = handleSubmit(e);
+  if (!cont || !submit){
+    window.alert("Please enter a valid destination and dates!");
+  }
 }
 
-// Geonames API (city) -> lat, long, country
-// http://api.geonames.org/postalCodeSearch?postalcode=9011&maxRows=10&username=thomaspeterowen
-// http://api.geonames.org/searchJSON?style=full&maxRows=12&name_startsWith=london&username=thomaspeterowen
-
-// Weatherbit API () -> forecast if within one week(?)
-
-// Pixabay API () -> photo returned (?)
-
-export { spaceRemover, handleSubmit, getWeatherData, getCityData, countdown, getImages };
+export { spaceRemover, inputEmpty, handleSubmit, getWeatherData, getCityData, countdown, getImages };

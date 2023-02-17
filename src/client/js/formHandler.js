@@ -4,41 +4,32 @@ function handleSubmit(event) {
 
   // check what text was put into the form field
   let dest = document.getElementById("dest").value;
-  console.log(dest);
-  // check validity of url
-  //let validity = Client.checkURL(url);
-  let validity = true;
+  // check validity of dest (not empty)
+  let empty = Client.inputEmpty(dest);
 
-  if (validity) {
+  if (!empty) {
     Client.getCityData(dest).then(function (data) {
       console.log(data);
       const lati = data.geonames[0].lat;
       const lngi = data.geonames[0].lng;
-      document.getElementById("lat").innerHTML = lati;
-      document.getElementById("lng").innerHTML = lngi;
-      document.getElementById("countryName").innerHTML = data.geonames[0].countryName;
+      document.getElementById("countryName").innerHTML = dest + ", " + data.geonames[0].countryName;
       
       Client.getWeatherData(lati, lngi).then(function (data) {
       console.log(data);
-      document.getElementById("temp").innerHTML = data.data[0].app_temp;
-      //document.getElementById("lng").innerHTML = data.geonames[0].lng;
-      //document.getElementById("countryName").innerHTML = data.geonames[0].countryName;
+      document.getElementById("temp").innerHTML = "Weather forecast: " + data.data[0].app_temp + " degrees.";
+      document.getElementById("clouds").innerHTML = data.data[0].clouds + " % cloud cover.";
+      document.getElementById("precip").innerHTML = data.data[0].precip + " % chance of rain.";
       });
     })
       
-    
-
     Client.getImages(Client.spaceRemover(dest)).then(function (data) {
       console.log(data);
       document.getElementById("pic").src = data.hits[0].previewURL;
     });    
+    return true;
   } else {
-    window.alert("Please enter a valid url!");
+    return false;
   }
-
-  
-
-  console.log("::: Form Submitted :::");
 }
 
 export { handleSubmit };

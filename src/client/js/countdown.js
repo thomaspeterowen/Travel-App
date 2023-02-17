@@ -1,13 +1,12 @@
 function countdown() {
-  // function to validate date and calculate countdown till trip.
+  // function to validate date and calculate/display countdown days until trip.
   // input = none
-  // output = none
+  // output = true(valid)/false(not valid)
   const date = document.getElementById("date").value;
-  //console.log("::: User date :::" + date);
+  const enddate = document.getElementById("enddate").value;
 
-  if (date) {
+  if (date && enddate) {
     const todayDate = new Date().toISOString().slice(0, 10);
-    //console.log("::: Today date :::" + todayDate);
     const diffMilSec = Date.parse(date) - Date.parse(todayDate);
     const diffDays = Math.floor(diffMilSec / (1000 * 60 * 60 * 24));
     let updateText;
@@ -22,8 +21,14 @@ function countdown() {
       updateText = diffDays + " days till your trip begins!";
     }
     document.getElementById("countdown").innerHTML = updateText;
+
+    const durationSeconds = Date.parse(enddate) - Date.parse(date);
+    const duration = Math.floor(durationSeconds / (1000 * 60 * 60 * 24));
+    document.getElementById("duration").innerHTML = "Trip duration: " + duration + " days.";
+
+    return true;
   } else {
-    window.alert("Please enter a valid date!");
+    return false;
   }
 }
 
