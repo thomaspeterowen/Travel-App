@@ -1,10 +1,27 @@
-# Weather-Journal App Project
+# Weather-Journal App Project (Nanadegree - Capstone Project)
 
 ## Overview
-This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+This project is an asynchronous web app that uses Web API and user data to dynamically update the UI in the form of a travel app.
 
-## Instructions
-This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
+## FYI
+
+- Reviewer should use Node version ___ otherwise can run the following in bash ___
+
+- Weatherbit unable to generate future forcast data, so excluded from the project.
+
+## Scripts
+
+npm install
+
+npm start
+
+npm run build-dev
+
+npm run build-prod
+
+npm run test
 
 ## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
+
+- Additional functionality is the addition of an 'end date' and calculation/display of trip duration.
+
