@@ -10,8 +10,10 @@ import "./styles/style.scss";
 
 //add event listeners here
 const submitButton = document.getElementById("generate");
-// event listener on click of button in UI to 'generate'
-submitButton.addEventListener("click", performAction);
+if(submitButton){
+  // event listener on click of button in UI to 'generate'
+  submitButton.addEventListener("click", performAction);
+}
 
 function performAction(e) {
   console.log("BUTTON CLICKED !!");
